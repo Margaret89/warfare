@@ -1,0 +1,164 @@
+html,
+body{
+	background: #1f1f1f;
+	font-family: $font-site;
+	@include font(normal, normal, 16px, 1.6, $color-text);
+	box-sizing:border-box;
+	height:100%;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+img{max-width: 100%;}
+
+a{
+	color: $color-yellow;
+	text-decoration: underline;
+}
+
+a:hover{text-decoration: none;}
+
+p{
+	padding: 0;
+	margin-bottom: 0 0 15px;
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5
+{
+	line-height: 1.4;
+	color: $color-yellow;
+}
+
+h1,.h1{
+	font-size: rem(80px);
+	margin-bottom: 40px;
+}
+
+h2,.h2{
+	font-size: rem(56px);
+	margin-bottom: 20px;
+}
+
+h3,.h3{
+	font-size: rem(40px);
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+h4,.h4{
+	font-size: rem(32px);
+	margin-bottom: 10px;
+}
+
+h5,.h5{
+	font-size: rem(24px);
+	margin-bottom: 0;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+main{
+	flex: 1 1 auto;
+	padding-bottom: 76px;
+	width: 100%;
+}
+
+.st-width{
+	width: 1200px;
+	padding: 0 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn,
+input[type="submit"].btn,
+button.btn{
+	display: inline-block;
+	height: 100px;
+	min-width: 240px;
+	background: linear-gradient(to bottom, rgba(255,204,0,1) 0%, rgba(255,153,0,1) 100%);
+	border: 0;
+	outline: 0;
+	border-radius: 3px;
+	@include font(normal, 900, rem(26px), 100px, #000);
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	padding: 0 60px;
+	cursor: pointer;
+	position: relative;
+	box-shadow: inset 0px 0px 46px 0px rgba(0,0,0,0.15), 0px 4px 0px 0px rgba(173,75,0,1);
+}
+
+.btn{
+	&__content{
+		position: relative;
+		z-index: 2;
+	}
+
+	&::before{
+		content: '';
+		display: inline-block;
+		width: calc(100% - 12px);
+		height: calc(100% - 12px);
+		border: 1px solid #ffb700;
+		border-radius: 3px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+// .btn:hover,
+// input[type="submit"].btn:hover,
+// button.btn:hover{
+// 	background: transparent;
+// 	color: $color-text;
+// }
+
+// .btn--border,
+// input[type="submit"].btn--border{
+// 	background: transparent;
+// 	color: $color-text;
+// }
+
+// .btn--border:hover,
+// input[type="submit"].btn--border:hover{
+// 	background: $color-text;
+// 	color: #fff;
+// }
+
+.code{
+	background-color: #f7f7f7;
+	border: 1px solid #e1e1e8;
+	color: #d14;
+	padding: 1px 4px;
+	display: inline-block;
+	font-family: monospace, arial;
+	border-radius: 3px;
+}
+
+.text-left{text-align: left !important;}
+.text-center{text-align: center !important;}
+.text-right{text-align: right !important;}
+.text-justify{text-align: justify !important;}
+.text-uppercase{text-transform: uppercase !important;}
+.text-bold {font-weight: 700 !important;}

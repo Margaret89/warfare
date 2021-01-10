@@ -1,0 +1,96 @@
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-Regular.eot');
+	src: local('TT Squares Regular'), local('TTSquares-Regular'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Regular.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Regular.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Regular.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-Light.eot');
+	src: local('TT Squares Light'), local('TTSquares-Light'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Light.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Light.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Light.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-Black.eot');
+	src: local('TT Squares Black'), local('TTSquares-Black'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Black.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Black.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Black.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-LightItalic.eot');
+	src: local('TT Squares Light Italic'), local('TTSquares-LightItalic'),
+		url('#{$path-fonts}/TTSquares/TTSquares-LightItalic.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-LightItalic.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-LightItalic.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-BlackItalic.eot');
+	src: local('TT Squares Black Italic'), local('TTSquares-BlackItalic'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BlackItalic.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BlackItalic.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BlackItalic.ttf') format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-Italic.eot');
+	src: local('TT Squares Italic'), local('TTSquares-Italic'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Italic.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Italic.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Italic.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Italic.ttf') format('truetype');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-Bold.eot');
+	src: local('TT Squares Bold'), local('TTSquares-Bold'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Bold.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Bold.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Bold.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TT Squares';
+	src: url('#{$path-fonts}/TTSquares/TTSquares-BoldItalic.eot');
+	src: local('TT Squares Bold Italic'), local('TTSquares-BoldItalic'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BoldItalic.woff2') format('woff2'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BoldItalic.woff') format('woff'),
+		url('#{$path-fonts}/TTSquares/TTSquares-BoldItalic.ttf') format('truetype');
+	font-weight: bold;
+	font-style: italic;
+}
+
