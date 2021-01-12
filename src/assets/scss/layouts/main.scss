@@ -65,20 +65,31 @@ h5,.h5{
 	margin-bottom: 0;
 }
 
-.wrapper{
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
+.spec-head{
+	@include font(normal, 300, rem(46px), 1.3, #fff);
+	text-transform: uppercase;
+
+	&__accent{
+		font-weight: 900;
+		color: $color-yellow;
+	}
 }
 
-main{
-	flex: 1 1 auto;
-	padding-bottom: 76px;
-	width: 100%;
+.wrapper{
+	max-width: 1920px;
+// 	display: flex;
+// 	flex-direction: column;
+// 	min-height: 100vh;
+// 	width: 100%;
+// 	height: 100%;
+// 	margin: 0 auto;
 }
+
+// main{
+// 	flex: 1 1 auto;
+// 	padding-bottom: 76px;
+// 	width: 100%;
+// }
 
 .st-width{
 	width: 1200px;
@@ -123,7 +134,7 @@ button.btn{
 		transform: translate(-50%, -50%) scale3d(1, 1, 1);
 		box-shadow: 0px 10px 50px 0px rgba(255,136,0,0.45);
 	}
-  }
+}
 
 .btn{
 	&::before{
@@ -137,7 +148,7 @@ button.btn{
 		animation: light-btn 2s infinite ease-in-out;
 		top: 50%;
 		left: 50%;
-		z-index: -1;
+		z-index: 0;
 	}
 
 	&::after{
@@ -151,7 +162,7 @@ button.btn{
 		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: -1;
+		z-index: 0;
 		transition: all 0.4s;
 	}
 

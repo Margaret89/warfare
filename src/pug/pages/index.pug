@@ -4,5 +4,52 @@ block variables
 	- var title = 'Главная';
 
 block content
-	section Лендинг
+	section.main
+		.st-width
+			.main__content
+				.main__info
+					.main__top
+						.main__logo
+							img(src="assets/img/logo.png", alt="")
 
+						.lang.js-lang
+							.lang__main.js-lang-main
+								.lang__icon
+									img(src="assets/img/lang-ru.png", alt="").js-lang-img
+								.lang__text.js-lang-text Ru
+
+							.lang__popup.js-lang-popup
+								-
+									var list=[
+										{img:'lang-en.png', text:'En'},
+										{img:'lang-de.png', text:'De'},
+										{img:'lang-fr.png', text:'Fr'},
+										{img:'lang-ru.png', text:'Ru', status:'active'},
+										{img:'lang-pl.png', text:'Pl'},
+									]
+
+								each item in list
+									.lang__item.js-lang-item(class=item.status?'active':'')
+										.lang__icon
+											img(src="assets/img/"+item.img, alt="").js-lang-img
+										.lang__text.js-lang-text= item.text
+
+					.spec-head
+						span.spec-head__accent Врывайся в сражение 
+						| на самых современных танках
+
+					.main__btn
+						a.btn(href='#')
+							span.btn__content Играй бесплатно
+
+
+				.bookmark
+					.bookmark__content
+						.bookmark__title Начни играть
+						.bookmark__text и получи бесплатный набор с танком <span class="bookmark__text-accent">Type 59-IIA Legend</span> и&nbsp<span class="bookmark__text-accent">7&nbsp;днями премиум-статуса</span> прямо на свой игровой аккаунт
+						.bookmark__img
+							img(src="assets/img/tank-seven.png", alt="")
+
+
+			.scroll-down
+				img(src="assets/img/scroll-down.png", alt="")

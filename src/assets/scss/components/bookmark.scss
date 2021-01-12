@@ -1,0 +1,43 @@
+/*-------------- bookmark -----------------*/
+.bookmark{
+	width: 370px;
+	background: #1d1d1d url(../img/flame.png) no-repeat 0 0;
+	padding: 105px 55px 90px;
+	position: relative;
+	text-align: center;
+
+	&__content{
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title{
+		@include font(normal, 900, rem(22px), 1.2, $color-yellow);
+		text-transform: uppercase;
+		margin-bottom: 27px;
+	}
+
+	&__text{
+		@include font(normal, normal, rem(16px), 1.875, $color-grey);
+	}
+
+	&__text-accent{
+		font-weight: bold;
+		color: #fff;
+	}
+
+	&__img{margin-top: 17px;}
+
+	&::after{
+		content: '';
+		display: inline-block;
+		width: 494px;
+		height: 255px;
+		background: url(../img/ribbon.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		bottom: -50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

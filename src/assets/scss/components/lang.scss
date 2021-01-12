@@ -1,0 +1,77 @@
+/*-------------- lang -----------------*/
+.lang{
+	position: relative;
+
+	&__main{
+		min-width: 92px;
+		display: inline-flex;
+		align-items: center;
+		background: rgba(31,31,31,0.6);
+		border-radius: 3px;
+		padding: 12px 30px 12px 12px;
+		position: relative;
+		cursor: pointer;
+	}
+
+	&__item{
+		display: flex;
+		align-items: center;
+		padding: 12px;
+		transition: all 0.2s ease 0s;
+		cursor: pointer;
+	}
+
+	&__icon{
+		flex: 0 0 22px;
+		margin-right: 8px;
+
+		img{display: block;}
+	}
+
+	&__text{
+		@include font(normal, normal, rem(14px), 1, #999);
+		transition: all 0.2s ease 0s;
+	}
+
+	&__main::after{
+		content: '';
+		display: inline-block;
+		width: 10px;
+		height: 6px;
+		background: url(../img/arrow-down.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		@include top-center;
+		right: 10px;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__popup{
+		display: none;
+		width: 100%;
+		margin-top: 1px;
+		background: #1f1f1f;
+		border-radius: 3px;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		margin-top: 1px;
+	}
+
+	&__item.active,
+	&__item:hover{
+		background: #383838;
+	}
+
+	&__item.active &__text,
+	&__item:hover &__text{
+		color: #fff;
+	}
+
+	&.open &__main{background: #1f1f1f;}
+
+	&.open &__main::after{
+		background-image: url(../img/arrow-down-white.png);
+		transform: translateY(-50%) rotate(180deg);
+	}
+}

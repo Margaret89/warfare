@@ -1,0 +1,83 @@
+/*-------------- main-screen -----------------*/
+.main{
+	min-height: 100vh;
+	background: url('../img/bg-screen1.jpg') no-repeat top center;
+	position: relative;
+	
+	&::before{
+		content: '';
+		width: 100%;
+		height: 100%;
+		background: url('../img/sparks.png') no-repeat top right;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&__content{
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		align-items: flex-start;
+	}
+
+	&__info{
+		width: calc(100% - 478px);
+		padding: 75px 0;
+	}
+
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 125px;
+	}
+
+	.spec-head{margin-top: 50px;}
+
+	&__btn{
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		margin-top: 67px;
+	}
+
+	&__btn::after{
+		content: '';
+		display: inline-block;
+		width: 120px;
+		height: 178px;
+		background: url(../img/helmet.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 30px;
+		right: -60px;
+		z-index: 3;
+	}
+
+	.scroll-down{
+		display: inline-block;
+		vertical-align: top;
+		width: 34px;
+		height: 40px;
+		position: absolute;
+		bottom: 15%;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+
+		img{
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			animation: scroll-down 2s infinite ease-in-out;
+		}
+	}
+}
+
+@keyframes scroll-down {
+	from {top: -10px;}
+	50% {top: calc(100% + 10px);}
+	to {top: -10px;}
+  }
