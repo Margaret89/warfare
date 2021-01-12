@@ -100,3 +100,101 @@ block content
 							.slider-tanks__info
 								.slider-tanks__type= item.type
 								.slider-tanks__name= item.name
+
+	section.awards
+		.st-width
+			.awards__content
+				.awards__top
+					.spec-head
+						span.spec-head__accent Ежедневные награды 
+						| для новичков
+				
+					.awards__text <b>30 дней премиум-статуса, репутация, золото, «Объект 279»</b> и множество других наград за входы в игру для новичков.
+
+				.awards-list
+					-
+						var list=[
+							{img:'coins.png', text:'1 500'},
+							{img:'30days.png', text:'30 дней'},
+							{img:'awards.png', text:'15 000'},
+						]
+
+					each item in list
+						.awards-list__item
+							.awards-list__img
+								img(src="assets/img/"+item.img, alt="")
+
+							.awards-list__text= item.text
+
+				.awards__desc
+					p После приобретения набора вам откроется новый раздел в меню игры.
+					p В течение <b>30 дней</b> там вы будете получать награды за вход в игру. Среди них: <b>золото</b>, <b>премиум-статус</b>, <b>кредиты</b> и <b>премиумная техника</b>.
+					
+					.awards__btn
+						a.btn(href='#')
+							span.btn__content Играй бесплатно
+
+			.scroll-down
+				img(src="assets/img/scroll-down.png", alt="")
+
+	section.services
+		.st-width
+			.services__content
+				.services-list
+					-
+						var list=[
+							{img:'ic-pvp.png', text:'pvp', status:'active'},
+							{img:'ic-tank.png', text:'Классы'},
+							{img:'ic-tech.png', text:'технологии'},
+							{img:'ic-pve.png', text:'PVE'},
+							{img:'ic-maps.png', text:'Карты'},
+							{img:'ic-parachute.png', text:'Десант'},
+						]
+
+					each item in list
+						.services-list__item(class=item.status?'active':'')
+							.services-list__icon
+								//- img(src="", alt="")
+							
+							.services-list__text= item.text
+
+				.services-list-decs
+					-
+						var list=[
+							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеем', status:'active'},
+							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5'},
+							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеемю Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеем'},
+							{title:'pvp', text:'Выбирайте машину себе по душе.'},
+							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники'},
+							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных'},
+						]
+
+					each item in list
+						.services-list-decs__item(class=item.status?'active':'')
+							.services-list-decs__title= item.title
+							.services-list-decs__text= item.text
+	
+	section.footer
+		.st-width
+			.footer__content
+				.footer__text © 2021 Postmeta Games LTD. All rights reserved.
+					br
+					|All trademarks are the property of their respective owners.
+
+				a.btn(href='#')
+					span.btn__content В бой!
+
+				.partner
+					-
+						var list=[
+							{img:'allods.png'},
+							{img:'cryengine.png'},
+							{img:'mygames.png'},
+							{img:'obsidian.png'},
+						]
+
+					each item in list
+						.partner__item
+							img(src="assets/img/"+item.img, alt="")
+
+				.footer__age 12+

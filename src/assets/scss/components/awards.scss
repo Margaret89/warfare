@@ -1,0 +1,109 @@
+/*-------------- awards -----------------*/
+.awards{
+	min-height: 1355px;
+	background: url('../img/bg-screen4.jpg') no-repeat top center;
+	overflow: hidden;
+
+	&__content{position: relative;}
+
+	&__content::before{
+		content: '';
+		display: inline-block;
+		width: 342px;
+		height: 275px;
+		background: url(../img/box-dark.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		left: -100px;
+		bottom: 200px;
+	}
+
+	&__content::after{
+		content: '';
+		display: inline-block;
+		width: 425px;
+		height: 395px;
+		background: url(../img/box.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		right: -100px;
+		top: 200px;
+	}
+	
+	&__top{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 80px;
+	}
+
+	&__top .spec-head,
+	&__text{
+		width: calc(50% - 15px);
+	} 
+
+	&__text{
+		@include font(normal, 300, rem(24px), 1.5, #fff);
+	}
+
+	&__desc{
+		max-width: 570px;
+		@include font(normal, 300, rem(18px), 1.78, #ccc);
+		margin: 80px auto 0;
+		text-align: center;
+
+		p:last-child{margin-bottom: 0;}
+	}
+
+	&__btn{
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 50px;
+		position: relative;
+	}
+
+	&__btn::before{
+		content: '';
+		display: inline-block;
+		width: 264px;
+		height: 153px;
+		background: url(../img/sparks-small.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__btn::after{
+		content: '';
+		display: inline-block;
+		width: 147px;
+		height: 114px;
+		background: url(../img/bullet-small.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 10px;
+		right: 0;
+		z-index: 2;
+	}
+}
+
+.awards-list{
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	max-width: 880px;
+	margin: 0 auto;
+
+	&__item{
+		width: 160px;
+		text-align: center;
+		padding: 0 10px 50px;
+		margin: 0 15px 30px;
+		background: url(../img/border.png) no-repeat bottom center;
+	}
+
+	&__text{
+		@include font(normal, bold, rem(22px), 1.2, #fff);
+	}
+}
