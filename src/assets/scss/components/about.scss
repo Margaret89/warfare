@@ -1,0 +1,82 @@
+/*-------------- about -----------------*/
+.about{
+	min-height: 960px;
+	background: url('../img/bg-screen2.jpg') no-repeat top center;
+	position: relative;
+	
+	&::before{
+		content: '';
+		width: 439px;
+		height: 656px;
+		background: url('../img/sparks-left.png') no-repeat top left;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&::after{
+		content: '';
+		width: 439px;
+		height: 656px;
+		background: url('../img/sparks-right.png') no-repeat top right;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&__content{
+		padding: 80px 0;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__update{
+		display: inline-block;
+		height: 47px;
+		@include font(normal, 300, rem(15px), rem(45px), #757575);
+		padding: 0 25px;
+		border: 1px solid #383838;
+		border-radius: 3px;
+		margin: 0 0 38px 100px;
+	}
+
+	&__title{
+		@include font(normal, 900, rem(120px), 1, $color-yellow);
+		text-transform: uppercase;
+		margin-bottom: 75px;
+		position: relative;
+	}
+
+	&__title::after{
+		content: '';
+		display: inline-block;
+		width: 204px;
+		height: 224px;
+		background: url(../img/bullet.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: -125px;
+		right: 33%;
+	}
+	
+	&__text-wrap{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__info{
+		width: 60%;
+		padding: 0 100px;
+
+		.btn-border{margin-top: 70px;}
+	}
+
+	&__text{
+		@include font(normal, 300, rem(24px), 1.5, #fff);
+	}
+
+	&__desc{
+		width: 40%;
+		@include font(normal, 300, rem(18px), 1.78, #999);
+	}
+}
