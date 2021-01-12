@@ -33,17 +33,18 @@
 		transition: all 0.2s ease 0s;
 	}
 
-	&__main::after{
+	&__arr{
 		content: '';
 		display: inline-block;
+		vertical-align: top;
 		width: 10px;
 		height: 6px;
-		background: url(../img/arrow-down.png) no-repeat center;
-		background-size: contain;
 		position: absolute;
 		@include top-center;
 		right: 10px;
 		transition: all 0.3s ease 0s;
+
+		.icon{fill: #ccc;}
 	}
 
 	&__popup{
@@ -70,8 +71,9 @@
 
 	&.open &__main{background: #1f1f1f;}
 
-	&.open &__main::after{
-		background-image: url(../img/arrow-down-white.png);
+	&.open &__arr{
 		transform: translateY(-50%) rotate(180deg);
+
+		.icon{fill: #fff;}
 	}
 }

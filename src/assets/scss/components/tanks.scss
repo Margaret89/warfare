@@ -1,0 +1,74 @@
+/*-------------- tanks -----------------*/
+.tanks{
+	min-height: 1235px;
+	background: url('../img/planes.jpg') no-repeat center left;
+	position: relative;
+	overflow: hidden;
+	padding: 120px 0;
+	margin: -120px 0;
+	
+	&::before,
+	&::after{
+		content: '';
+		width: 100%;
+		height: 120px;
+		position: absolute;
+		left: 0;
+		z-index: 10;
+	}
+	
+	&::before{
+		background: url('../img/bg-curve-top.png') no-repeat bottom center;
+		top: 0;
+	}
+
+	&::after{
+		background: url('../img/bg-curve-bottom.png') no-repeat top center;
+		bottom: 0;
+	}
+
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 75px;
+		position: relative;
+		z-index: 15;
+	}
+
+	&__logo,
+	&__text{
+		width: 50%;
+	}
+
+	&__logo{text-align: center;}
+
+	&__text{
+		@include font(normal, 300, rem(26px), 1.5, #000);
+		padding-left: 10%;
+		margin-top: -35px;
+	}
+
+	&__content{
+		position: relative;
+	}
+
+	&__content::before{
+		content: '';
+		display: inline-block;
+		width: 1209px;
+		height: 946px;
+		background: url(../img/bg-yellow.png) no-repeat top left;
+		background-size: contain;
+		position: absolute;
+		top: -120px;
+		left: calc(50% - 250px);
+		z-index: 11;
+	}
+
+	.slider-tanks{
+		margin-top: -100px;
+		position: relative;
+		z-index: 12;
+	}
+}

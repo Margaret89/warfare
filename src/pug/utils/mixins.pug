@@ -3,3 +3,7 @@ mixin h1(v)
 		.row
 			.col-12
 				h1= v
+
+mixin svg(icon, name_class, width,height)
+	svg.icon(class=name_class?name_class:'', width=width?width:'', height=height?height:'')
+		use(xlink:href='assets/sprites/sprite.svg#'+icon)

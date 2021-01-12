@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="6" viewBox="0 0 10 6">
+  <defs>
+    <filter id="filter" x="0" y="0" width="10" height="6" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#ccc"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="arrow_up" data-name="arrow up" class="cls-1" d="M10,1.326L8.582,0,5,3.348,1.419,0,0,1.326,5,6Z"/>
+</svg>

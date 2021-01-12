@@ -18,6 +18,9 @@ block content
 									img(src="assets/img/lang-ru.png", alt="").js-lang-img
 								.lang__text.js-lang-text Ru
 
+								.lang__arr
+									+svg('ic-arrow-down','ic-arrow-down', '10', '6')
+
 							.lang__popup.js-lang-popup
 								-
 									var list=[
@@ -69,3 +72,31 @@ block content
 							span.btn-border__content Играть
 						
 					.about__desc Летом 2044 года началась катастрофа чудовищных масштабов: массовые извержения вулканов и землетрясения за несколько часов стерли с лица земли большинство современных цивилизаций и поставили под угрозу само существование человечества.
+	
+	section.tanks
+		.st-width
+			.tanks__content
+				.tanks__top
+					.tanks__logo
+						img(src="assets/img/logo-echo.png", alt="")
+
+					.tanks__text Получите <b>5 премиумных</b> российских боевых машин, <b>облики</b>, <b>золото</b> и многое другое!
+				
+				.slider-tanks.js-slider-tanks
+					-
+						var list=[
+							{img:'tank1.png', type:'Зенитная установка', name:'Kurganets-25'},
+							{img:'tank2.png', type:'Танк 2', name:'Танк 2'},
+							{img:'tank3.png', type:'Танк 3', name:'Танк 3'},
+							{img:'tank4.png', type:'Танк 4', name:'Танк 4'},
+							{img:'tank5.png', type:'Танк 5', name:'Танк 5'},
+						]
+
+					each item in list
+						.slider-tanks__item
+							.slider-tanks__img
+								img(src="assets/img/"+item.img, alt="")
+
+							.slider-tanks__info
+								.slider-tanks__type= item.type
+								.slider-tanks__name= item.name

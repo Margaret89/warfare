@@ -1,0 +1,54 @@
+/*-------------- slider-tanks -----------------*/
+.slider-tanks{
+	&__item{position: relative;}
+
+	&__type{
+		@include font(normal, bold, rem(18px), 1.2, #000);
+		margin-bottom: 15px;
+	}
+
+	&__name{
+		@include font(normal, 900, rem(40px), 1.2, #000);
+	}
+
+	&__info{
+		width: 50%;
+		padding-left: 10%;
+		padding-top: 95px;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.slick-arrow{
+		position: absolute;
+		top: calc(50% + 35px);
+		transform: translateY(-50%);
+		cursor: pointer;
+		z-index: 10;
+
+		.icon{
+			fill: #000;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	.slick-prev{right: 105px;}
+	.slick-next{right: 0px;}
+
+	.slick-arrow:hover .icon{fill: #ff4400;}
+
+	.slick-track{display: flex;}
+	.slick-slide{height: auto;}
+
+	.slick-slide > div,
+	&__item,
+	&__img{
+		height: 100%;
+	}
+
+	&__img{
+		display: flex;
+		align-items: center;
+	}
+}
