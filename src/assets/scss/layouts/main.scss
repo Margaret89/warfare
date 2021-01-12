@@ -195,10 +195,8 @@ button.btn-border{
 	height: 100px;
 	min-width: 240px;
 	background: transparent;
-	border: 1px solid transparent;
-	border-radius: 30px;
-	border-image: linear-gradient(to bottom, #ffcb00 0%, #ff6f00 100%);
-	border-image-slice: 1;
+	border: 0;
+	border-radius: 3px;
 	outline: 0;
 	@include font(normal, 900, rem(26px), 100px, $color-yellow);
 	text-transform: uppercase;
@@ -210,12 +208,44 @@ button.btn-border{
 	transition: all 0.2s ease 0s;
 }
 
+.btn-border__content{
+	position: relative;
+	z-index: 2;
+}
 
-// .btn--border:hover,
-// input[type="submit"].btn--border:hover{
-// 	background: $color-text;
-// 	color: #fff;
-// }
+.btn-border::before{
+	content: '';
+	display: block;
+	width: 0;
+	height: 100%;
+	border-radius: 3px;
+	background: linear-gradient(to bottom, #ffcb00 0%, #ff6f00 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all 0.2s ease 0s;
+}
+
+.btn-border::after{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+	background: linear-gradient(to bottom, #ffcb00 0%, #ff6f00 100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	clip-path: polygon(0 100%,2px 100%,2px 2px,calc(100% - 3px) 2px,calc(100% - 3px) calc(100% - 2px),2px calc(100% - 2px),2px 100%,100% 100%,100% 0,0 0);
+}
+
+.btn-border:hover::before{width: 100%;}
+
+.btn-border:hover,
+input[type="submit"].btn-border:hover,
+button.btn-border{
+	color: #000;
+}
 
 .code{
 	background-color: #f7f7f7;
