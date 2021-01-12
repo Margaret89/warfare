@@ -19,6 +19,7 @@ const PATHS = {
   sprites:'assets/sprites/',
   svgicon:'../src/assets/svg-icon/',
   svgcoloricon:'../src/assets/svg-color-icon/',
+  json:'assets/json',
 }
 
 const PAGES_DIR = `${PATHS.src}/pug/pages/`
@@ -59,7 +60,17 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: '/node_modules/'
-    }, {
+    },
+     {
+      test: /\.json$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]',
+        outputPath: PATHS.json,
+        publicPath: '../json/'
+      }
+    }, 
+    {
       test: /\.vue$/,
       loader: 'vue-loader',
       options: {
@@ -189,6 +200,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+      { from: `${PATHS.src}/${PATHS.assets}json`, to: `${PATHS.assets}json` },
       // { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
       // { from: `${PATHS.src}/static`, to: '' },
     ]),
