@@ -24,32 +24,33 @@ block content
 							.lang__popup.js-lang-popup
 								-
 									var list=[
-										{img:'lang-en.png', text:'En'},
-										{img:'lang-de.png', text:'De'},
-										{img:'lang-fr.png', text:'Fr'},
-										{img:'lang-ru.png', text:'Ru', status:'active'},
-										{img:'lang-pl.png', text:'Pl'},
+										{img:'lang-cz.png', text:'Cz', data:'cz'},
+										{img:'lang-en.png', text:'En', data:'en'},
+										{img:'lang-de.png', text:'De', data:'de'},
+										{img:'lang-fr.png', text:'Fr', data:'fr'},
+										{img:'lang-ru.png', text:'Ru', data:'ru', status:'active'},
+										{img:'lang-pl.png', text:'Pl', data:'pl'},
 									]
 
 								each item in list
-									.lang__item.js-lang-item(class=item.status?'active':'')
+									.lang__item.js-lang-item(class=item.status?'active':'', data-language=item.data)
 										.lang__icon
 											img(src="assets/img/"+item.img, alt="").js-lang-img
 										.lang__text.js-lang-text= item.text
 
 					.spec-head
-						span.spec-head__accent Врывайся в сражение 
-						| на самых современных танках
+						span.spec-head__accent(data-lang='sc_one_title_yellow') Врывайся в сражение 
+						span(data-lang='sc_one_title') на самых современных танках
 
 					.main__btn
 						a.btn(href='#')
-							span.btn__content Играй бесплатно
+							span.btn__content(data-lang='btn_play_free') Играй бесплатно
 
 
 				.bookmark
 					.bookmark__content
-						.bookmark__title Начни играть
-						.bookmark__text и получи бесплатный набор с танком <span class="bookmark__text-accent">Type 59-IIA Legend</span> и&nbsp<span class="bookmark__text-accent">7&nbsp;днями премиум-статуса</span> прямо на свой игровой аккаунт
+						.bookmark__title(data-lang='bookmark_title') Начни играть
+						.bookmark__text(data-lang='bookmark__text') и получи бесплатный набор с танком <b>Type 59-IIA Legend</b> и&nbsp<b>7&nbsp;днями премиум-статуса</b> прямо на свой игровой аккаунт
 						.bookmark__img
 							img(src="assets/img/tank-seven.png", alt="")
 
@@ -60,18 +61,18 @@ block content
 	section.about
 		.st-width
 			.about__content
-				.about__update Обновление 0.34
+				.about__update(data-lang='about_update') Обновление 0.34
 
-				.about__title Апокалипсис
+				.about__title(data-lang='about_title') Апокалипсис
 			
 				.about__text-wrap
 					.about__info
-						.about__text <b>Обновление уже в игре!</b> Сразитесь с врагом на осколках разрушенной цивилизации.
+						.about__text(data-lang='about_text') <b>Обновление уже в игре!</b> Сразитесь с врагом на осколках разрушенной цивилизации.
 
 						a.btn-border(href='#')
-							span.btn-border__content Играть
+							span.btn-border__content(data-lang='btn_play') Играть
 						
-					.about__desc Летом 2044 года началась катастрофа чудовищных масштабов: массовые извержения вулканов и землетрясения за несколько часов стерли с лица земли большинство современных цивилизаций и поставили под угрозу само существование человечества.
+					.about__desc(data-lang='about_desc') Летом 2044 года началась катастрофа чудовищных масштабов: массовые извержения вулканов и землетрясения за несколько часов стерли с лица земли большинство современных цивилизаций и поставили под угрозу само существование человечества.
 	
 	section.tanks
 		.st-width
@@ -80,7 +81,7 @@ block content
 					.tanks__logo
 						img(src="assets/img/logo-echo.png", alt="")
 
-					.tanks__text Получите <b>5 премиумных</b> российских боевых машин, <b>облики</b>, <b>золото</b> и многое другое!
+					.tanks__text(data-lang='tanks_text') Получите <b>5 премиумных</b> российских боевых машин, <b>облики</b>, <b>золото</b> и многое другое!
 				
 		.slider-tanks.js-slider-tanks
 			-
@@ -92,31 +93,31 @@ block content
 					{img:'tank5.png', type:'Танк 5', name:'Танк 5'},
 				]
 
-			each item in list
+			each item, index in list
 				.slider-tanks__item
 					.st-width
 						.slider-tanks__img
 							img(src="assets/img/"+item.img, alt="")
 
 						.slider-tanks__info
-							.slider-tanks__type= item.type
-							.slider-tanks__name= item.name
+							.slider-tanks__type(data-lang='slider_tanks_type'+index)= item.type
+							.slider-tanks__name(data-lang='slider_tanks_name'+index)= item.name
 
 	section.awards
 		.st-width
 			.awards__content
 				.awards__top
 					.spec-head
-						span.spec-head__accent Ежедневные награды 
-						| для новичков
+						span.spec-head__accent(data-lang='sc_four_title_yellow') Ежедневные награды 
+						span(data-lang='sc_four_title') для новичков
 				
-					.awards__text <b>30 дней премиум-статуса, репутация, золото, «Объект 279»</b> и множество других наград за входы в игру для новичков.
+					.awards__text(data-lang='awards_text') <b>30 дней премиум-статуса, репутация, золото, «Объект 279»</b> и множество других наград за входы в игру для новичков.
 
 				.awards-list
 					-
 						var list=[
 							{img:'coins.png', text:'1 500'},
-							{img:'30days.png', text:'30 дней'},
+							{img:'30days.png', text:'30 ', lang:'дней'},
 							{img:'awards.png', text:'15 000'},
 						]
 
@@ -126,14 +127,16 @@ block content
 								img(src="assets/img/"+item.img, alt="")
 
 							.awards-list__text= item.text
+								if(item.lang)
+									span(data-lang='days')= item.lang
 
 				.awards__desc
-					p После приобретения набора вам откроется новый раздел в меню игры.
-					p В течение <b>30 дней</b> там вы будете получать награды за вход в игру. Среди них: <b>золото</b>, <b>премиум-статус</b>, <b>кредиты</b> и <b>премиумная техника</b>.
+					p(data-lang='awards_desc_p1') После приобретения набора вам откроется новый раздел в меню игры.
+					p(data-lang='awards_desc_p2') В течение <b>30 дней</b> там вы будете получать награды за вход в игру. Среди них: <b>золото</b>, <b>премиум-статус</b>, <b>кредиты</b> и <b>премиумная техника</b>.
 					
 					.awards__btn
 						a.btn(href='#')
-							span.btn__content Играй бесплатно
+							span.btn__content(data-lang='btn_play_free') Играй бесплатно
 
 			.scroll-down
 				img(src="assets/img/scroll-down.png", alt="")
@@ -146,7 +149,7 @@ block content
 						var list=[
 							{img:'ic-pvp', text:'pvp', status:'active'},
 							{img:'ic-tank', text:'Классы'},
-							{img:'ic-technology', text:'технологии'},
+							{img:'ic-technology', text:'Технологии'},
 							{img:'ic-pve', text:'PVE'},
 							{img:'ic-map', text:'Карты'},
 							{img:'ic-parachute', text:'Десант'},
@@ -156,33 +159,31 @@ block content
 						.services-list__item.js-services-list-item(class=item.status?'active':'', data-index=index)
 							.services-list__icon
 								+svg(item.img, item.img, '52', '52')
-							.services-list__text= item.text
+							.services-list__text(data-lang='services_text'+index)= item.text
 
 				.services-list-decs
 					-
 						var list=[
 							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеем', status:'active'},
-							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5'},
-							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеемю Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеем'},
-							{title:'pvp', text:'Выбирайте машину себе по душе.'},
-							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники'},
-							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных'},
+							{title:'Классы', text:'Выбирайте машину себе по душе. Вас ждут целых 5'},
+							{title:'Технологии', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеемю Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники, каждый — со своими особенностями и геймплеем'},
+							{title:'PVE', text:'Выбирайте машину себе по душе.'},
+							{title:'Карты', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных классов техники'},
+							{title:'Десант', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных'},
 						]
 
 					each item, index in list
 						.services-list-decs__item.js-services-list-decs-item(class=item.status?'active':'', data-index=index)
-							.services-list-decs__title= item.title
-							.services-list-decs__text= item.text
+							.services-list-decs__title(data-lang='services_text'+index)= item.title
+							.services-list-decs__text(data-lang='services_decs_text'+index)= item.text
 	
 	section.footer
 		.st-width
 			.footer__content
-				.footer__text © 2021 Postmeta Games LTD. All rights reserved.
-					br
-					|All trademarks are the property of their respective owners.
+				.footer__text(data-lang='footer_text') © 2021 Postmeta Games LTD. All rights reserved.<br>All trademarks are the property of their respective owners.
 
 				a.btn(href='#')
-					span.btn__content В бой!
+					span.btn__content(data-lang='into_battle') В бой!
 
 				.partner
 					-
