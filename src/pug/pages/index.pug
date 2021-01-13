@@ -82,24 +82,25 @@ block content
 
 					.tanks__text Получите <b>5 премиумных</b> российских боевых машин, <b>облики</b>, <b>золото</b> и многое другое!
 				
-				.slider-tanks.js-slider-tanks
-					-
-						var list=[
-							{img:'tank1.png', type:'Зенитная установка', name:'Kurganets-25'},
-							{img:'tank2.png', type:'Танк 2', name:'Танк 2'},
-							{img:'tank3.png', type:'Танк 3', name:'Танк 3'},
-							{img:'tank4.png', type:'Танк 4', name:'Танк 4'},
-							{img:'tank5.png', type:'Танк 5', name:'Танк 5'},
-						]
+		.slider-tanks.js-slider-tanks
+			-
+				var list=[
+					{img:'tank1.png', type:'Зенитная установка', name:'Kurganets-25'},
+					{img:'tank2.png', type:'Танк 2', name:'Танк 2'},
+					{img:'tank3.png', type:'Танк 3', name:'Танк 3'},
+					{img:'tank4.png', type:'Танк 4', name:'Танк 4'},
+					{img:'tank5.png', type:'Танк 5', name:'Танк 5'},
+				]
 
-					each item in list
-						.slider-tanks__item
-							.slider-tanks__img
-								img(src="assets/img/"+item.img, alt="")
+			each item in list
+				.slider-tanks__item
+					.st-width
+						.slider-tanks__img
+							img(src="assets/img/"+item.img, alt="")
 
-							.slider-tanks__info
-								.slider-tanks__type= item.type
-								.slider-tanks__name= item.name
+						.slider-tanks__info
+							.slider-tanks__type= item.type
+							.slider-tanks__name= item.name
 
 	section.awards
 		.st-width
@@ -143,19 +144,18 @@ block content
 				.services-list
 					-
 						var list=[
-							{img:'ic-pvp.png', text:'pvp', status:'active'},
-							{img:'ic-tank.png', text:'Классы'},
-							{img:'ic-tech.png', text:'технологии'},
-							{img:'ic-pve.png', text:'PVE'},
-							{img:'ic-maps.png', text:'Карты'},
-							{img:'ic-parachute.png', text:'Десант'},
+							{img:'ic-pvp', text:'pvp', status:'active'},
+							{img:'ic-tank', text:'Классы'},
+							{img:'ic-technology', text:'технологии'},
+							{img:'ic-pve', text:'PVE'},
+							{img:'ic-map', text:'Карты'},
+							{img:'ic-parachute', text:'Десант'},
 						]
 
-					each item in list
-						.services-list__item(class=item.status?'active':'')
+					each item, index in list
+						.services-list__item.js-services-list-item(class=item.status?'active':'', data-index=index)
 							.services-list__icon
-								//- img(src="", alt="")
-							
+								+svg(item.img, item.img, '52', '52')
 							.services-list__text= item.text
 
 				.services-list-decs
@@ -169,8 +169,8 @@ block content
 							{title:'pvp', text:'Выбирайте машину себе по душе. Вас ждут целых 5 различных'},
 						]
 
-					each item in list
-						.services-list-decs__item(class=item.status?'active':'')
+					each item, index in list
+						.services-list-decs__item.js-services-list-decs-item(class=item.status?'active':'', data-index=index)
 							.services-list-decs__title= item.title
 							.services-list-decs__text= item.text
 	

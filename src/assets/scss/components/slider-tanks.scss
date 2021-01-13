@@ -1,4 +1,36 @@
 /*-------------- slider-tanks -----------------*/
+@keyframes bounceInLeft {
+	from,
+	60%,
+	75%,
+	90%,
+	to {
+	  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+  
+	0% {
+	  opacity: 0;
+	  transform: translate3d(-3000px, 0, 0) scaleX(3);
+	}
+  
+	60% {
+	  opacity: 1;
+	  transform: translate3d(25px, 0, 0) scaleX(1);
+	}
+  
+	75% {
+	  transform: translate3d(-10px, 0, 0) scaleX(0.98);
+	}
+  
+	90% {
+	  transform: translate3d(5px, 0, 0) scaleX(0.995);
+	}
+  
+	to {
+	  transform: translate3d(0, 0, 0);
+	}
+}
+
 .slider-tanks{
 	&__item{position: relative;}
 
@@ -18,6 +50,8 @@
 		position: absolute;
 		top: 0;
 		right: 0;
+		opacity: 0;
+		transition: all 0.5s ease 0.5s;
 	}
 
 	.slick-arrow{
@@ -33,8 +67,8 @@
 		}
 	}
 
-	.slick-prev{right: 105px;}
-	.slick-next{right: 0px;}
+	.slick-prev{right: calc(50% - 480px);}
+	.slick-next{right: calc(50% - 585px);}
 
 	.slick-arrow:hover .icon{fill: #ff4400;}
 
@@ -51,4 +85,11 @@
 		display: flex;
 		align-items: center;
 	}
+
+	.slick-active &__img img{
+		animation: bounceInLeft 1s ease-in-out;
+		animation-fill-mode: forwards;
+	}
+
+	.slick-active &__info{opacity: 1;}
 }
