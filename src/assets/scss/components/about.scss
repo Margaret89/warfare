@@ -2,6 +2,7 @@
 .about{
 	min-height: 960px;
 	background: url('../img/bg-screen2.jpg') no-repeat top center;
+	background-size: cover;
 	position: relative;
 	
 	&::before{

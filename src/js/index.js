@@ -39,13 +39,13 @@ function Translate() {
 		if(xrhFile.readyState === 4) {
 		  if(xrhFile.status === 200 || xrhFile.status == 0) {
 			var LngObject = JSON.parse(xrhFile.responseText);
-			console.log(LngObject["name1"]);
+			// console.log(LngObject["name1"]);
 			var allDom = document.getElementsByTagName("*");
 			for(var i =0; i < allDom.length; i++){
 			  var elem = allDom[i];
 			  var key = elem.getAttribute(_self.attribute);
 			  if(key != null) {
-				console.log(key);
+				// console.log(key);
 				elem.innerHTML = LngObject[key];
 			  }
 			}
@@ -65,7 +65,20 @@ function Translate() {
 	translate.process();
   }
 
-loadNewLang('ru');
+
+// loadNewLang('ru');
+
+var newUrl='/';
+
+let params = (new URL(document.location)).searchParams;
+let paramLang = params.get("lang");
+
+if(paramLang){
+	loadNewLang(paramLang);
+	chooseLang($('.js-lang-item[data-language="'+paramLang+'"]'));
+}else{
+	loadNewLang('ru');
+}
 
 // выбор языка
 $('.js-lang-main').on('click', function() {
@@ -74,17 +87,37 @@ $('.js-lang-main').on('click', function() {
 });
 
 $('.js-lang-item').on('click', function() {
-	var curImg = $(this).find('.js-lang-img').attr('src');
-	var curText = $(this).find('.js-lang-text').text();
-	var lang = $(this).data('language');
+	chooseLang($(this));
+});
+
+function chooseLang(elem){
+	var curImg = $(elem).find('.js-lang-img').attr('src');
+	var curText = $(elem).find('.js-lang-text').text();
+	var lang = $(elem).data('language');
 
 	$('.js-lang-main').find('.js-lang-img').attr('src', curImg);
 	$('.js-lang-main').find('.js-lang-text').text(curText);
 
+	
+	if(lang=='ru'){
+		newUrl = '/';
+		$('.js-logo').attr('src', 'assets/img/logo.png')
+	}else{
+		newUrl = '/?lang='+lang;
+		$('.js-logo').attr('src', 'assets/img/logo_en.png')
+	}
+ 	history.pushState('', '', newUrl);
+
 	loadNewLang(lang);
 
 	$('.js-lang-item').removeClass('active');
-	$(this).addClass('active');
-	$(this).parents('.js-lang').removeClass('open');
-	$(this).parent('.js-lang-popup').slideUp(300);
+	$(elem).addClass('active');
+	$(elem).parents('.js-lang').removeClass('open');
+	$(elem).parent('.js-lang-popup').slideUp(300);
+}
+
+// Прокрутка при клике на анимированную стрелку
+$('.js-scroll-down').on('click', function(){
+	var pos = $(this).offset().top;
+	$('html, body').animate({'scrollTop': pos + 300}, 400);
 });

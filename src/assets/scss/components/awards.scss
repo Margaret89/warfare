@@ -2,6 +2,7 @@
 .awards{
 	min-height: 1355px;
 	background: url('../img/bg-screen4.jpg') no-repeat top center;
+	background-size: cover;
 	overflow: hidden;
 	padding: 245px 0 200px;
 	position: relative;
@@ -93,7 +94,7 @@
 	}
 
 	
-	.scroll-down{bottom: 120px;}
+	.scroll-down{bottom: 0px;}
 }
 
 .awards-list{

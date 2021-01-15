@@ -2,6 +2,7 @@
 .main{
 	min-height: 100vh;
 	background: url('../img/bg-screen1.jpg') no-repeat top center;
+	background-size: cover;
 	position: relative;
 	
 	&::before{
@@ -60,11 +61,12 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 34px;
-	height: 40px;
+	height: 140px;
 	position: absolute;
-	bottom: 15%;
+	bottom: 12%;
 	left: 0;
 	right: 0;
+	z-index: 10;
 	margin: 0 auto;
 
 	img{
@@ -73,11 +75,12 @@
 		right: 0;
 		margin: 0 auto;
 		animation: scroll-down 2s infinite ease-in-out;
+		cursor: pointer;
 	}
 }
 
 @keyframes scroll-down {
-	from {top: -10px;}
-	50% {top: calc(100% + 10px);}
-	to {top: -10px;}
+	from {top: 0;}
+	50% {top: calc(100% - 40px);}
+	to {top: 0;}
   }
