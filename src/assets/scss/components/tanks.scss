@@ -19,11 +19,13 @@
 	
 	&::before{
 		background: url('../img/bg-curve-top.png') no-repeat bottom center;
+		background-size: cover;
 		top: 0;
 	}
 
 	&::after{
 		background: url('../img/bg-curve-bottom.png') no-repeat top center;
+		background-size: cover;
 		bottom: 0;
 	}
 

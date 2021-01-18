@@ -2,6 +2,8 @@ import {$} from './common';
 
 // Слайдер танков
 $('.js-slider-tanks').slick({
+	autoplay: $('.js-slider-tanks').data('auto'),
+	autoplaySpeed: $('.js-slider-tanks').data('time'),
 	nextArrow:'<div class="slick-next slick-arrow"><svg class="icon ic-arrow-right" width="26" height="40"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-right"></use></svg></div>',
 	prevArrow:'<div class="slick-prev slick-arrow"><svg class="icon ic-arrow-left" width="26" height="40"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-left"></use></svg></div>'
 });
